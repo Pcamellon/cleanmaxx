@@ -1,14 +1,105 @@
-function classToggle() {
-  console.log("nav-menu-toggler");
+/**
+ * Nav Menu toggler
+ */
+(function () {
+  function classToggle() {
+    console.log("nav-menu-toggler");
 
-  let navMenu = document.querySelector("#nav-menu");
+    let navMenu = document.querySelector("#nav-menu");
 
-  navMenu.classList.toggle("nav-menu-show");
-}
+    navMenu.classList.toggle("nav-menu-show");
+  }
 
-document
-  .querySelector("#nav-menu-toggler")
-  .addEventListener("click", classToggle);
+  document
+    .querySelector("#nav-menu-toggler")
+    .addEventListener("click", classToggle);
+})();
+
+/**
+ * Animate on viewport entry (Intersection observer)
+ */
+(function () {
+  let targetsSecHeaders;
+  let targetsCards;
+  let observer;
+
+  // Set things up
+  window.addEventListener(
+    "load",
+    (event) => {
+      // Testimonials
+
+      let options = {
+        //   // root: document.querySelector("#scrollArea"),
+        //   // root: null,
+        //   // rootMargin: "0px",
+        threshold: 0.7
+      };
+
+      function handleIntersect(entries, observer) {
+        entries.forEach((entry) => {
+          // Each entry describes an intersection change for one observed
+          // target element:
+          //   entry.boundingClientRect
+          //   entry.intersectionRatio
+          //   entry.intersectionRect
+          //   entry.isIntersecting
+
+          if (entry.isIntersecting) {
+            // console.log("entry target:", entry.target.classList);
+
+            if (entry.target.classList.contains("section-header")) {
+              // Add slide-up anim to .section-header elems
+              entry.target.classList.add("slide-up");
+            } else if (entry.target.classList.contains("card")) {
+              // Add slide-right anim to .card elems
+              entry.target.classList.add("slide-right");
+            }
+
+            entry.target.classList.remove("hidden");
+          }
+
+          //   entry.rootBounds
+          //   entry.target
+          //   entry.time
+          // });
+        });
+      }
+
+      observer = new IntersectionObserver(handleIntersect, options);
+
+      // Select al section headers
+      targetsSecHeaders = document.querySelectorAll(".section-header");
+
+      // Add each one to the observer
+      targetsSecHeaders.forEach((target) => {
+        if (target) {
+          // the callback we setup for the observer will be executed now for the first time
+          // it waits until we assign a target to our observer (even if the target is currently not visible)
+          observer.observe(target);
+        }
+      });
+
+      // Select all cards on Testimonials
+      targetsCards = document.querySelectorAll(".card");
+
+      // Add each one to the observer
+      targetsCards.forEach((target) => {
+        if (target) {
+          // the callback we setup for the observer will be executed now for the first time
+          // it waits until we assign a target to our observer (even if the target is currently not visible)
+          observer.observe(target);
+        }
+      });
+    },
+    false
+  );
+})();
+
+/**
+ * Animated Counter JavaScript
+ */
+// TODO
 
 // (function ($) {
 //   "use strict";

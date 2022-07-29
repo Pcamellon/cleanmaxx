@@ -1,5 +1,5 @@
 {
-  "name": "cleanmaxxusa",
+  "name": "cleanmaxx",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -12,12 +12,12 @@
     "url": "git+https://github.com/codesandbox-app/static-template.git"
   },
   "keywords": [],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
+  "author": "Pedro Pablo Camellon",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/codesandbox-app/static-template/issues"
+    "url": "https://github.com/Pcamellon/cleanmaxx/issues"
   },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
+  "homepage": "https://github.com/Pcamellon/cleanmaxx#readme",
   "devDependencies": {
     "serve": "^11.2.0"
   }

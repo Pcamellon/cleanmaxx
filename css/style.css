@@ -11,6 +11,14 @@
   --clr-secondary: #f2f2f2;
   --clr-accent: #f2bb16;
 
+  /*
+#734002
+#736555
+#A69785
+#261B11
+#D9D0C7
+*/
+
   --clr-primary: #736555;
   --clr-secondary: #f2f2f2;
   --clr-accent: #734002;
@@ -130,6 +138,9 @@ select {
 .i-block {
   display: inline-block;
 }
+.hidden {
+  visibility: hidden;
+}
 
 .justify-content-center {
   justify-content: center;
@@ -226,7 +237,7 @@ a {
   text-transform: uppercase;
   /* font-weight: var(--fw-semibold); */
 
-  padding: 0.75rem 1rem;
+  padding: 0.75em 1em;
   cursor: pointer;
   border-radius: 0.3rem;
 
@@ -303,8 +314,8 @@ a {
   .nav-menu {
     position: fixed;
     z-index: 999;
-    inset: 0% 0% 0% 0%;
-    transform: translateY(-100%);
+    inset: -100% 0% 100% 0%;
+
     display: flex;
     padding: 4rem 2rem 2rem 2rem;
     margin: 0;
@@ -333,7 +344,9 @@ a {
   }
 
   .nav-menu-show {
-    transform: translateY(0%);
+    inset: 0% 0% 0% 0%;
+
+    /* transform: translateY(100%); */
   }
 
   .nav-item {
@@ -396,7 +409,7 @@ a {
 }
 
 .hero-content .heading {
-  margin-block: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* 
@@ -467,4 +480,44 @@ select:focus-visible {
   display: block;
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
+}
+
+/**
+  Animations
+*/
+
+/* Slide Up */
+@keyframes slide-up {
+  from {
+    transform: translateY(1rem);
+    opacity: 0%;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+
+/* The element to apply the animation to */
+.slide-up {
+  animation-name: slide-up;
+  animation-duration: 0.6s;
+}
+
+/* Slide Right */
+@keyframes slide-right {
+  from {
+    transform: translateX(-1rem);
+    opacity: 0%;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+/* The element to apply the animation to */
+.slide-right {
+  animation-name: slide-right;
+  animation-duration: 0.6s;
 }
