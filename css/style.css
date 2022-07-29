@@ -159,6 +159,16 @@ select {
   margin-block: 3rem;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+
 .py-1 {
   padding-block: 1rem;
 }
@@ -187,6 +197,10 @@ select {
 }
 .fw-bold {
   font-weight: var(--fw-bold);
+}
+
+.fst-i {
+  font-style: italic;
 }
 
 .bg-primary {
@@ -229,7 +243,7 @@ a {
 /*  */
 .container {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   margin: 0 auto;
 }
 
@@ -469,18 +483,31 @@ select:focus-visible {
   outline: none;
 }
 
+/**
+* Testimonials
+*/
 .card {
   margin-block: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--clr-light);
 }
+/**
+* Testimonials END
+*/
 
-.stat .number {
+/**
+* About Us
+*/
+.stat .counter {
   display: block;
-  font-size: var(--fs-lg);
+  /* font-size: var(--fs-lg); */
+  font-size: 2rem;
   font-weight: var(--fw-bold);
 }
+/**
+* About Us END
+*/
 
 /**
   Animations
