@@ -3,10 +3,7 @@
  */
 (function () {
   function classToggle() {
-    console.log("nav-menu-toggler");
-
     let navMenu = document.querySelector("#nav-menu");
-
     navMenu.classList.toggle("nav-menu-show");
   }
 
@@ -16,11 +13,12 @@
 })();
 
 /**
- * Animate on viewport entry (Intersection observer)
+ * Animate on viewport entry (Intersection Observer)
  */
 (function () {
   let targetsSecHeaders;
   let targetsCards;
+  let targetsCounters;
   let observer;
 
   // Set things up
@@ -54,6 +52,9 @@
             } else if (entry.target.classList.contains("card")) {
               // Add slide-right anim to .card elems
               entry.target.classList.add("slide-right");
+            } else if (entry.target.classList.contains("card")) {
+              // Start counting anim in counter elems
+              // TODO
             }
 
             entry.target.classList.remove("hidden");
@@ -85,6 +86,18 @@
 
       // Add each one to the observer
       targetsCards.forEach((target) => {
+        if (target) {
+          // the callback we setup for the observer will be executed now for the first time
+          // it waits until we assign a target to our observer (even if the target is currently not visible)
+          observer.observe(target);
+        }
+      });
+
+      // Select all counters in the About Us section
+      targetsCounters = document.querySelectorAll(".counter");
+
+      // Add each one to the observer
+      targetsCounters.forEach((target) => {
         if (target) {
           // the callback we setup for the observer will be executed now for the first time
           // it waits until we assign a target to our observer (even if the target is currently not visible)

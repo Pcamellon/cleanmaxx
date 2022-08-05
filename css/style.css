@@ -7,9 +7,9 @@
   --fw-semibold: 500;
   --fw-bold: 700;
 
-  --clr-primary: #034aa6;
+  /*  --clr-primary: #034aa6;
   --clr-secondary: #f2f2f2;
-  --clr-accent: #f2bb16;
+  --clr-accent: #f2bb16; */
 
   /*
 #734002
@@ -27,8 +27,8 @@
   /* --clr-info: #17a2b8; */
   /* --clr-danger: #dc3545; */
   /* --clr-light: #f8f9fa; */
-  --clr-light: #f2f2f2;
-  --clr-dark: #343a40;
+  /* --clr-light: #f2f2f2; */
+  /* --clr-dark: #343a40; */
 
   --clr-light: #d9d0c7;
   --clr-dark: #261b11;
@@ -63,6 +63,8 @@ h2,
 h3,
 h4,
 p,
+ul,
+ol,
 figure,
 blockquote,
 dl,
@@ -70,9 +72,10 @@ dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+/* Remove list styles on ul, ol elements which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
   list-style: none;
 }
 
@@ -129,15 +132,23 @@ select {
 .grid {
   display: grid;
 }
+
 .flex {
   display: flex;
 }
+
+.flex-column {
+  flex-direction: column;
+}
+
 .block {
   display: block;
 }
+
 .i-block {
   display: inline-block;
 }
+
 .hidden {
   visibility: hidden;
 }
@@ -145,16 +156,35 @@ select {
 .justify-content-center {
   justify-content: center;
 }
+
 .text-center {
   text-align: center;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.mx-1 {
+  margin-inline: 1rem;
+}
+
+.mr-05 {
+  margin-inline-end: 0.5rem;
+}
+
+.mr-1 {
+  margin-inline-end: 1rem;
 }
 
 .my-1 {
   margin-block: 1rem;
 }
+
 .my-2 {
   margin-block: 2rem;
 }
+
 .my-3 {
   margin-block: 3rem;
 }
@@ -179,12 +209,15 @@ select {
   padding-block: 3rem;
 }
 
+/* Font Size */
 .fs-sm {
   font-size: var(--fs-sm);
 }
+
 .fs-md {
   font-size: var(--fs-md);
 }
+
 .fs-lg {
   font-size: var(--fs-lg);
 }
@@ -192,9 +225,11 @@ select {
 .fw-regular {
   font-weight: var(--fw-regular);
 }
+
 .fw-semibold {
   font-weight: var(--fw-semibold);
 }
+
 .fw-bold {
   font-weight: var(--fw-bold);
 }
@@ -203,29 +238,43 @@ select {
   font-style: italic;
 }
 
+/* Color */
 .bg-primary {
   background-color: var(--clr-primary);
 }
+
 .bg-secondary {
   background-color: var(--clr-secondary);
 }
+
 .bg-accent {
   background-color: var(--clr-accent);
 }
+
 .bg-light {
   background-color: var(--clr-light);
 }
+
 .bg-dark {
   background-color: var(--clr-dark);
 }
 
 .text-light {
+  color: var(--clr-light);
+}
+
+.text-secondary {
   color: var(--clr-secondary);
 }
+
 .text-dark {
   color: var(--clr-dark);
 }
-/* Utilities END*/
+
+.list-unstyled {
+  list-style-type: none;
+}
+/*** Utilities END */
 
 /*  */
 body {
@@ -282,16 +331,17 @@ a {
 }
 
 /***
-  Navbar
+*  Navbar
 */
 .navbar {
+  margin-block: auto;
+  margin-inline: auto 1rem;
+
   /* position: absolute;
-  z-index: 1; */
+z-index: 1; */
 
   /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-
-  display: flex;
+grid-template-columns: 1fr 1fr; */
 
   color: var(--clr-dark);
   /* background-color: var(--clr-secondary); */
@@ -314,6 +364,8 @@ a {
 } */
 
 .nav-menu {
+  display: flex;
+
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
@@ -324,7 +376,19 @@ a {
   display: none;
 }
 
-@media (max-width: 35rem) {
+.nav-item {
+  margin-inline: 1rem;
+}
+
+/***
+*  Mobile View
+*/
+@media (max-width: 45rem) {
+  /* Only leave the Brand and Hamb Menu on the navigation elem. */
+  .navbar {
+    position: absolute;
+  }
+
   .nav-menu {
     position: fixed;
     z-index: 999;
@@ -371,13 +435,7 @@ a {
     color: var(--clr-dark);
   }
 }
-
-/* @media only screen and (max-width: 30rem) {
-  .navbar-collapse {
-    display: none;
-  }
-} */
-
+/*** Mobile View END */
 /***  Navbar END  */
 
 /***
