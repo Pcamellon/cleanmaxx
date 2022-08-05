@@ -96,6 +96,11 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+/* TODO */
+a {
+  text-decoration: none;
+}
+
 /* Make images easier to work with */
 img,
 picture {
@@ -137,6 +142,10 @@ select {
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -157,6 +166,10 @@ select {
   justify-content: center;
 }
 
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
 .text-center {
   text-align: center;
 }
@@ -167,6 +180,14 @@ select {
 
 .mx-1 {
   margin-inline: 1rem;
+}
+
+.mx-2 {
+  margin-inline: 2rem;
+}
+
+.mx-3 {
+  margin-inline: 3rem;
 }
 
 .mr-05 {
@@ -285,14 +306,13 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: var(--clr-dark);
 }
 
 /*  */
 .container {
-  width: 100%;
-  padding: 1rem 1rem;
+  width: min(100%, 55rem);
+  padding: 3rem 1rem;
   margin: 0 auto;
 }
 
@@ -331,20 +351,18 @@ a {
 }
 
 /***
-*  Navbar
+*  Header
 */
+.primary-header {
+  width: min(100%, 55rem);
+  margin-inline: auto;
+}
+
 .navbar {
   margin-block: auto;
   margin-inline: auto 1rem;
 
-  /* position: absolute;
-z-index: 1; */
-
-  /* display: grid;
-grid-template-columns: 1fr 1fr; */
-
   color: var(--clr-dark);
-  /* background-color: var(--clr-secondary); */
 }
 
 .navbar-brand {
@@ -378,6 +396,9 @@ grid-template-columns: 1fr 1fr; */
 
 .nav-item {
   margin-inline: 1rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
 /***
@@ -502,9 +523,38 @@ section .secondary-heading {
   font-size: var(--fs-md);
 }
 
-/***
- Make an Appointment
+/*
+*  Our Services
 */
+.service {
+  text-align: center;
+  max-width: 70%;
+}
+
+/* Mobile */
+@media (max-width: 45rem) {
+  .services-content {
+    flex-direction: column;
+  }
+
+  .service {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 45%;
+  }
+}
+/* .service {
+  max-width: max(28%, 12rem);
+} */
+
+/**
+*  Make an Appointment
+*/
+.appointment {
+  width: min(100%, 25rem);
+  margin-inline: auto;
+}
+
 .appointment label {
   padding: 0.3rem;
 }
@@ -545,11 +595,27 @@ select:focus-visible {
 * Testimonials
 */
 .card {
-  margin-block: 1rem;
-  padding: 1rem;
+  padding: 2rem 1.5rem;
+
+  width: 20rem;
+
   border-radius: 1rem;
   background-color: var(--clr-light);
 }
+
+/* Mobile */
+@media (max-width: 45rem) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 45%;
+  }
+}
+
 /**
 * Testimonials END
 */
