@@ -190,12 +190,8 @@ select {
   margin-inline: 3rem;
 }
 
-.mr-05 {
-  margin-inline-end: 0.5rem;
-}
-
-.mr-1 {
-  margin-inline-end: 1rem;
+.my-auto {
+  margin-block: auto;
 }
 
 .my-1 {
@@ -220,14 +216,52 @@ select {
   margin-top: 3rem;
 }
 
+.mr-auto {
+  margin-inline-end: auto;
+}
+
+.mr-05 {
+  margin-inline-end: 0.5rem;
+}
+
+.mr-1 {
+  margin-inline-end: 1rem;
+}
+
+.mb-1 {
+  margin-block-end: 1rem;
+}
+
+.mb-2 {
+  margin-block-end: 2rem;
+}
+
+.mb-3 {
+  margin-block-end: 3rem;
+}
+
+.ml-auto {
+  margin-inline-start: auto;
+}
+
+.px-1 {
+  padding-inline: 1rem;
+}
+
 .py-1 {
   padding-block: 1rem;
 }
+
 .py-2 {
   padding-block: 2rem;
 }
+
 .py-3 {
   padding-block: 3rem;
+}
+
+.pb-4 {
+  padding-block-end: 4rem;
 }
 
 /* Font Size */
@@ -312,8 +346,7 @@ a {
 /*  */
 .container {
   width: min(100%, 55rem);
-  padding: 3rem 1rem;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .btn {
@@ -359,14 +392,10 @@ a {
 }
 
 .navbar {
-  margin-block: auto;
-  margin-inline: auto 1rem;
-
   color: var(--clr-dark);
 }
 
 .navbar-brand {
-  margin: 1rem;
   z-index: 1000;
 
   text-transform: uppercase;
@@ -395,8 +424,6 @@ a {
 }
 
 .nav-item {
-  margin-inline: 1rem;
-
   text-transform: uppercase;
   letter-spacing: 0.05rem;
 }
@@ -429,12 +456,7 @@ a {
 
   .nav-menu-toggler {
     display: block;
-    /* position: absolute; */
     z-index: 1000;
-    /* right: 1rem; */
-    /* top: 2rem; */
-
-    margin-inline: auto 1rem;
 
     background: transparent;
     width: 1.5rem;
@@ -513,12 +535,10 @@ a {
 } */
 
 .section-header {
-  margin: 2rem 0;
   font-size: var(--fs-lg);
 }
 
 section .secondary-heading {
-  margin: 3rem 0 1rem 0;
   font-weight: var(--fw-semibold);
   font-size: var(--fs-md);
 }
@@ -594,6 +614,10 @@ select:focus-visible {
 /**
 * Testimonials
 */
+.cards {
+  gap: 1rem;
+}
+
 .card {
   padding: 2rem 1.5rem;
 
